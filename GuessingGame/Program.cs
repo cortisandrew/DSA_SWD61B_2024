@@ -2,7 +2,7 @@
 
 const int RUNS = 200;
 
-List<int> problemSizes = new List<int>() { 100, 500, 10000, 100000, 1000000, 10000000, 100000000 };
+List<int> problemSizes = new List<int>() { 100, 1000, 10000, 100000, 1000000, 10000000, 100000000 };
 
 Console.WriteLine("Algorithm B:");
 foreach (int problemSize in problemSizes)
