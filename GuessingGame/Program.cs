@@ -1,26 +1,55 @@
 ﻿using GuessingGame;
 
-const int RUNS = 1000;
+const int RUNS = 200;
 
-List<int> workRequired = new List<int>();
+List<int> problemSizes = new List<int>() { 100, 500, 10000, 100000, 1000000, 10000000, 100000000 };
 
-for (int i = 0; i < RUNS; i++)
+Console.WriteLine("Algorithm B:");
+foreach (int problemSize in problemSizes)
 {
-    // Create secret number
-    var secretNumber = new SecretNumber(100);
+    List<int> workRequired = new List<int>();
 
-    // set up strategy
-    GuessingStrategyA strategyA = new GuessingStrategyA(secretNumber);
+    for (int i = 0; i < RUNS; i++)
+    {
+        // Create secret number
+        var secretNumberB = new SecretNumber(problemSize);
 
-    // carry out strategy
-    (int, int) strategyAResults = strategyA.Guess();
+        // set up strategy
+        GuessingStrategyB strategyB = new GuessingStrategyB(secretNumberB);
 
-    // summarise the results
-    Console.WriteLine($"Using Strategy A, the secret number is {strategyAResults.Item1}. It took {strategyAResults.Item2} guesses to find");
+        // carry out strategy
+        (int, int) strategyBResults = strategyB.Guess();
+
+
+        // summarise the results
+        //Console.WriteLine($"Using Strategy B, the secret number is {strategyBResults.Item1}. It took {strategyBResults.Item2} guesses to find");
+        workRequired.Add(strategyBResults.Item2);
+    }
+    Console.WriteLine($"When the problem size is {problemSize}, the average work was {workRequired.Average()}");
 }
 
 
+Console.WriteLine("Algorithm A:");
+foreach (int problemSize in problemSizes)
+{
+    List<int> workRequired = new List<int>();
 
-// Create 2 algorithms to guess
+    for (int i = 0; i < RUNS; i++)
+    {
+        // Create secret number
+        var secretNumber = new SecretNumber(problemSize);
 
-// Run for different problem sizes and compare the results
+        // set up strategy
+        GuessingStrategyA strategyA = new GuessingStrategyA(secretNumber);
+
+        // carry out strategy
+        (int, int) strategyAResults = strategyA.Guess();
+
+        // summarise the results
+        // Console.WriteLine($"Using Strategy A, the secret number is {strategyAResults.Item1}. It took {strategyAResults.Item2} guesses to find");
+        workRequired.Add(strategyAResults.Item2);
+    }
+
+    Console.WriteLine($"When the problem size is {problemSize}, the average work was {workRequired.Average()}");
+}
+
