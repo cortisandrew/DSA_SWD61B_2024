@@ -1,11 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GuessingGame
+﻿namespace GuessingGame
 {
     public class SecretNumber
     {
@@ -15,6 +8,9 @@ namespace GuessingGame
         // Work is the Number of guesses made so far
         private int work = 0;
 
+        // The largest value that can be stored
+        private int n;
+
         /// <summary>
         /// Return the total amount of guesses made
         /// </summary>
@@ -22,6 +18,11 @@ namespace GuessingGame
         {
             get { return work; }
         }
+
+        /// <summary>
+        /// Get the maximum secret number
+        /// </summary>
+        public int MaxValue { get { return n; } }
 
         private int secretNumber;
 
@@ -32,6 +33,8 @@ namespace GuessingGame
         /// <param name="n">n is the problem size (default 100).</param>
         public SecretNumber(int n = 100)
         {
+            this.n = n;
+
             // generate a secret number between 1 and n (both inclusive)
             this.secretNumber = r.Next(1, n+1);
         }
