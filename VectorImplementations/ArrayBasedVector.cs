@@ -6,8 +6,41 @@ using System.Threading.Tasks;
 
 namespace VectorImplementations
 {
-    internal class ArrayBasedVector<T> : IVectorADT
+    public class ArrayBasedVector : IVectorADT
     {
-        T[] _items;
+        public void Append(object element)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Count()
+        {
+            throw new NotImplementedException();
+        }
+
+        public object ElementAtRank(int rank)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void InsertAtRank(int rank, object element)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsEmpty()
+        {
+            throw new NotImplementedException();
+        }
+
+        public object RemoveAtRank(int rank)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object ReplaceAtRank(int rank, object element)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
