@@ -65,7 +65,17 @@ namespace VectorImplementations
             {
                 // the ABV and Vector do not have a limit - we can keep adding elements
                 // (in practice up to the memory limit)
-                throw new NotImplementedException();
+                T[] newArray = new T[V.Length * 2];
+
+                for (int i = 0; i < count; i++)
+                {
+                    newArray[i] = V[i];
+                }
+
+                // This is equivalent to the above
+                // V.CopyTo(newArray, 0);
+
+                V = newArray;
             }
 
             // starting from i pointing to the LAST element
@@ -89,12 +99,40 @@ namespace VectorImplementations
 
         public T RemoveAtRank(int rank)
         {
-            throw new NotImplementedException();
+            // validation step
+            if (rank < 0 || rank >= count)
+            {
+                throw new ArgumentOutOfRangeException(nameof(rank));
+            }
+
+            T removedElement = V[rank];
+
+            // perform the removal...
+            // skipped code
+            for (int i = rank; i < count; i++)
+            {
+                V[i] = V[i + 1];
+            }
+
+            V[count - 1] = default!;
+
+            count--;
+            return removedElement;
+
         }
 
         public T ReplaceAtRank(int rank, T element)
         {
-            throw new NotImplementedException();
+            // validation step
+            if (rank < 0 || rank >= count)
+            {
+                throw new ArgumentOutOfRangeException(nameof(rank));
+            }
+
+            T oldElement = V[rank];
+            V[rank] = element;
+
+            return oldElement;
         }
     }
 }
