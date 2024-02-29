@@ -12,6 +12,7 @@ arrayBasedVector2.Append(1.0);
 */
 #endregion
 
+/*
 Stopwatch stopwatch = new Stopwatch();
 
 // Sizes of arrays to consider
@@ -29,27 +30,32 @@ for (int i = 0; i < 100; i++)
 arrayBasedVector.ElementAtRank(0);
 
 Console.WriteLine("Testing the speed of the Element At Rank");
+// for every problem size of interest
 foreach (var problemSize in problemSizes)
 {
     stopwatch.Reset();
 
+    // intialisation (depends on what you need)
     arrayBasedVector = new ArrayBasedVector<int>(problemSize);
     for (int i = 0; i < problemSize; i++)
     {
         arrayBasedVector.Append(i);
     }
 
+    // repeat the same code many times
     for (int i = 0; i < repetitions; i++)
     {
         int randomRank = r.Next(0, problemSize);
 
         stopwatch.Start();
+        // run the code timed
         arrayBasedVector.ElementAtRank(randomRank);
         stopwatch.Stop();
     }
 
     // Console.WriteLine($"The total time to read {repetitions} elements from an ABV of size {problemSize} is {stopwatch.ElapsedTicks} ticks");
 
+    // present the mean time taken
     Console.WriteLine($"{problemSize}, {(double)stopwatch.ElapsedTicks/repetitions}");
 }
 
@@ -102,3 +108,18 @@ foreach (var problemSize in problemSizes)
 
     Console.WriteLine($"{problemSize}, {(double)stopwatch.ElapsedTicks / repetitions}");
 }
+*/
+
+ArrayBasedVector<int> test = new ArrayBasedVector<int>();
+
+test.Append(0);
+test.Append(1);
+test.Append(2);
+test.Append(3);
+test.Append(4);
+Console.WriteLine(test);
+
+test.RemoveAtRank(2);
+Console.WriteLine(test);
+test.RemoveAtRank(3);
+Console.WriteLine(test);

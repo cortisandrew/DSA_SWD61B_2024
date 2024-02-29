@@ -109,7 +109,7 @@ namespace VectorImplementations
 
             // perform the removal...
             // skipped code
-            for (int i = rank; i < count; i++)
+            for (int i = rank; i < count - 1; i++)
             {
                 V[i] = V[i + 1];
             }
@@ -133,6 +133,17 @@ namespace VectorImplementations
             V[rank] = element;
 
             return oldElement;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("[");
+            sb.Append(String.Join(", ", V.Take(count)));
+            sb.Append("]");
+
+            return sb.ToString();
         }
     }
 }
