@@ -17,11 +17,14 @@ namespace VectorImplementations
     /// <remarks>This is similar to the C# List</remarks>
     public class ArrayBasedVector<T> : IVectorADT<T>
     {
+        #region Fields and Constantx
         private int count;
 
         private T[] V;
 
-        const int DEFAULT_LENGTH = 128;
+        const int DEFAULT_LENGTH = 4;
+        #endregion
+
         public ArrayBasedVector(int arrayLength = DEFAULT_LENGTH)
         {
             count = 0;
@@ -30,27 +33,58 @@ namespace VectorImplementations
 
         public void Append(T element)
         {
-            throw new NotImplementedException();
+            InsertAtRank(count, element);
         }
 
         public int Count()
         {
-            throw new NotImplementedException();
+            return count;
         }
 
         public T ElementAtRank(int rank)
         {
-            throw new NotImplementedException();
+            // validation step
+            if (rank < 0 || rank >= count)
+            {
+                throw new ArgumentOutOfRangeException(nameof(rank));
+            }
+
+            return V[rank];
         }
 
         public void InsertAtRank(int rank, T element)
         {
-            throw new NotImplementedException();
+            // validation step
+            if (rank < 0 || rank > count)
+            {
+                throw new ArgumentOutOfRangeException(nameof(rank));
+            }
+
+            // array is full
+            if (V.Length == count) // the number of available spaces in the array is equal to the number of elements
+            {
+                // the ABV and Vector do not have a limit - we can keep adding elements
+                // (in practice up to the memory limit)
+                throw new NotImplementedException();
+            }
+
+            // starting from i pointing to the LAST element
+            // keeping i moving until it arrives at the rank position
+            for (int i = count - 1; i >= rank; i--)
+            {
+                // read V[i]
+                // place it in V[i + 1]
+                V[i + 1] = V[i];
+            }
+
+            // there is an available space at rank
+            V[rank] = element;
+            count++;
         }
 
         public bool IsEmpty()
         {
-            throw new NotImplementedException();
+            return count == 0;
         }
 
         public T RemoveAtRank(int rank)
