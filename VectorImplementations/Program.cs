@@ -110,6 +110,7 @@ foreach (var problemSize in problemSizes)
 }
 */
 
+/*
 ArrayBasedVector<int> test = new ArrayBasedVector<int>();
 
 test.Append(0);
@@ -123,3 +124,87 @@ test.RemoveAtRank(2);
 Console.WriteLine(test);
 test.RemoveAtRank(3);
 Console.WriteLine(test);
+*/
+
+StackUsingABV<string> undoStack = new StackUsingABV<string>();
+
+undoStack.Push("Append 'Hello'");
+undoStack.Push("Append 'World'");
+
+Console.WriteLine(undoStack);
+
+Console.WriteLine("Undo last action:");
+Console.WriteLine(undoStack.Pop());
+
+undoStack.Push("SWD6.1B");
+Console.WriteLine(undoStack);
+
+
+Stopwatch stopwatch = new Stopwatch();
+
+StackUsingABV<int> timedStack = new StackUsingABV<int>();
+
+int repetitions = 100;
+bool firstAttempt = true;
+List<int> problemSizes = new List<int>() { 100, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000 };
+
+Console.WriteLine("Push:");
+foreach (var problemSize in problemSizes)
+{
+    stopwatch.Reset();
+
+    timedStack = new StackUsingABV<int>(problemSize + repetitions + 2);
+    for (int i = 0; i < problemSize; i++)
+    {
+        timedStack.Push(i);
+    }
+
+    for (int i = 0; i < repetitions; i++)
+    {
+        stopwatch.Start();
+        timedStack.Push(i);
+        stopwatch.Stop();
+    }
+
+    // Console.WriteLine($"The total time to read {repetitions} elements from an ABV of size {problemSize} is {stopwatch.ElapsedTicks} ticks");
+
+    if (firstAttempt)
+    {
+        firstAttempt = false;
+    }
+    else
+    {
+        Console.WriteLine($"{problemSize}, {(double)stopwatch.ElapsedTicks / repetitions}");
+    }
+}
+
+
+firstAttempt = true;
+Console.WriteLine("Pop:");
+foreach (var problemSize in problemSizes)
+{
+    stopwatch.Reset();
+
+    timedStack = new StackUsingABV<int>(problemSize + repetitions + 2);
+    for (int i = 0; i < problemSize; i++)
+    {
+        timedStack.Push(i);
+    }
+
+    for (int i = 0; i < repetitions; i++)
+    {
+        stopwatch.Start();
+        timedStack.Pop();
+        stopwatch.Stop();
+    }
+
+    // Console.WriteLine($"The total time to read {repetitions} elements from an ABV of size {problemSize} is {stopwatch.ElapsedTicks} ticks");
+    if (firstAttempt)
+    {
+        firstAttempt = false;
+    }
+    else
+    {
+        Console.WriteLine($"{problemSize}, {(double)stopwatch.ElapsedTicks / repetitions}");
+    }
+}
