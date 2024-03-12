@@ -161,7 +161,7 @@ singlyLinkedList.InsertFirst("S");
 
 Console.WriteLine(singlyLinkedList);
 
-lastNode = singlyLinkedList.GetLastNode();
+//lastNode = singlyLinkedList.GetLastNode();
 
 Console.WriteLine(lastNode.Element);
 
