@@ -128,6 +128,7 @@ Console.WriteLine(test);
 
 //TimeStack();
 
+/*
 SinglyLinkedList<string> singlyLinkedList = new SinglyLinkedList<string>();
 
 // Node<string> lastNode = singlyLinkedList.GetLastNode();
@@ -139,6 +140,7 @@ singlyLinkedList.InsertFirst("B");
 singlyLinkedList.InsertFirst("A");
 
 singlyLinkedList.Append("E");
+*/
 
 /*
 singlyLinkedList.Append("D");
@@ -155,6 +157,7 @@ Node<string> nodeB = new Node<string>("B", nodeC);
 Node<string> nodeA = new Node<string>("A", nodeB);
 */
 
+/*
 Console.WriteLine(singlyLinkedList);
 
 singlyLinkedList.InsertFirst("S");
@@ -172,6 +175,56 @@ Console.WriteLine(singlyLinkedList);
 //lastNode = singlyLinkedList.GetLastNode();
 
 //Console.WriteLine(lastNode.Element);
+*/
+
+int elementsToEnqueue = 1000000;
+QueueUsingSinglyLinkedList<int> myQueue = new QueueUsingSinglyLinkedList<int>();
+
+Stopwatch sw = new Stopwatch();
+
+for (int i = 0; i < elementsToEnqueue; i++)
+{
+    sw.Start();
+    myQueue.Enqueue(i);
+    sw.Stop();
+}
+
+Console.WriteLine($"The time to enqueue {elementsToEnqueue} elements using a linked list is {sw.ElapsedTicks} ticks");
+
+sw.Reset();
+
+for (int i = 0; i < elementsToEnqueue; i++)
+{
+    sw.Start();
+    myQueue.Dequeue();
+    sw.Stop();
+}
+
+Console.WriteLine($"The time to dequeue {elementsToEnqueue} elements using a linked list is {sw.ElapsedTicks} ticks");
+
+QueueUsingArrayBasedVector<int> queueUsingArrayBasedVector = new QueueUsingArrayBasedVector<int>(elementsToEnqueue);
+
+sw.Reset();
+
+for (int i = 0; i < elementsToEnqueue; i++)
+{
+    sw.Start();
+    queueUsingArrayBasedVector.Enqueue(i);
+    sw.Stop();
+}
+
+Console.WriteLine($"The time to enqueue {elementsToEnqueue} elements using an array based vector is {sw.ElapsedTicks} ticks");
+
+sw.Reset();
+
+for (int i = 0; i < elementsToEnqueue; i++)
+{
+    sw.Start();
+    queueUsingArrayBasedVector.Dequeue();
+    sw.Stop();
+}
+
+Console.WriteLine($"The time to dequeue {elementsToEnqueue} elements using an array based vector is {sw.ElapsedTicks} ticks");
 
 static void TimeStack()
 {
