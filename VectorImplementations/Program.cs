@@ -163,7 +163,7 @@ Console.WriteLine(singlyLinkedList);
 
 //lastNode = singlyLinkedList.GetLastNode();
 
-Console.WriteLine(lastNode.Element);
+//Console.WriteLine(lastNode.Element);
 
 static void TimeStack()
 {

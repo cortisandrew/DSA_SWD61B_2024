@@ -10,7 +10,7 @@ namespace VectorImplementations
     {
         public Node<T>? Head { get; internal set; }
 
-        // public Node<T>? Tail { get; internal set; }
+        public Node<T>? Tail { get; internal set; }
 
         public int Size { get; internal set; } = 0;
 
@@ -20,14 +20,19 @@ namespace VectorImplementations
             // Will work even when Size == 0 (a.k.a. Head is NULL)
             Node<T> newNode = new Node<T>(element, Head);
 
+            // Sometimes you also need to update the Tail
+            if (Size == 0) // equivalent to Head == null
+            {
+                // the new node is being added to an empty linked list
+                Tail = newNode;
+            }
+
             // Step 2: Update
             // Careful this can destroy information
             Head = newNode;
 
             // Step 3: Do not forget to
             Size++;
-
-            // Sometimes you also need to update the Tail
         }
 
         /// <summary>
@@ -44,19 +49,36 @@ namespace VectorImplementations
                 return;
             }
 
+            // Size is not 0, we have at least 1 node
+            // this means (unless we have a bug), that the Tail is not null
+            if (Tail == null)
+            {
+                throw new ApplicationException("This exception should never be thrown! You might have a bug in your implementation!");
+            }
+
             // Step 1: Always start with building new items
             Node<T> newNode = new Node<T>(element, null);
 
             // Step 2: Update
             // 2.a - find the last node in the linked list
-            Node<T> tail = GetLastNode();
+            Node<T> tail = Tail; // Get the previous Tail... //  GetLastNode();
             // 2.b - update the reference of the last node
-            tail.Next = newNode;
+            tail.Next = newNode; // add the new node AFTER the previous tail
+
+            // The new node has been added to the very end of the linked list
+            // This new node is the last node of the linked list
+            Tail = newNode; // this new node is the new tail
 
             // Step 3
             Size++;
         }
 
+        /// <summary>
+        /// Prefer to use the Tail rather than go through all the elements
+        /// I will leave this code here so that you can recall how we traveresed the linked list
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         internal Node<T> GetLastNode()
         {
             Node<T>? cursor = Head;
@@ -97,6 +119,36 @@ namespace VectorImplementations
             sb.Append("NULL");
 
             return sb.ToString();
+        }
+
+        public T RemoveFirst()
+        {
+            // Goes to the head of linked list,
+            // Removes the head of linked list,
+            // Returns the element that has been removed
+
+            if (Size == 0) // || (Head == null) 
+            {
+                // there are no elements to remove!
+                throw new InvalidOperationException("There are no elements to remove!");
+            }
+
+            T elementToReturn = Head!.Element;  // Head cannot be null (because of above check). Therefore we added the ! to stop the warning
+
+            // To remove the Head,
+            // Change the Head to point to the 2nd item (if any) in the linked list
+            Head = Head.Next;
+            // Note if Size was 1 at the beginning, now Head should be equal to NULL
+
+
+            // When do we need to also update the tail?
+            // If the new Head is null
+            // This means that I have removed ALL of the elements in the list
+            // Inlcuding the Tail of list
+            Tail = null;
+
+            Size--;
+            return elementToReturn;
         }
     }
 }
