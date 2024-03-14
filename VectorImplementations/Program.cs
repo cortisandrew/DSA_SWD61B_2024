@@ -161,6 +161,14 @@ singlyLinkedList.InsertFirst("S");
 
 Console.WriteLine(singlyLinkedList);
 
+Console.WriteLine(singlyLinkedList.RemoveFirst());
+Console.WriteLine(singlyLinkedList.RemoveFirst());
+Console.WriteLine(singlyLinkedList.RemoveFirst());
+Console.WriteLine(singlyLinkedList.RemoveFirst());
+Console.WriteLine(singlyLinkedList.RemoveFirst());
+
+Console.WriteLine(singlyLinkedList);
+
 //lastNode = singlyLinkedList.GetLastNode();
 
 //Console.WriteLine(lastNode.Element);
