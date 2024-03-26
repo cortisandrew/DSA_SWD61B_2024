@@ -138,11 +138,9 @@ namespace EmpiricalAnalysis
                     stopwatch.Start();
                     // execute what you want to time here...
 
-                    // Find mean 
-                    for (int j = 1; j < problemSize; j++)
-                    {
-                        Array.Sort(array);
-                    }
+                    
+                    Array.Sort(array);
+                    
                     // End find mean
 
                     stopwatch.Stop();
