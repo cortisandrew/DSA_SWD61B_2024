@@ -50,5 +50,56 @@ namespace AsymptoticAnalysisExamples
             Console.WriteLine($"n={array.Length}, T(n)={workCarriedOut}");
             return maximum;
         }
+
+        long Factorial(long n)
+        {
+            // stopping condition
+            if (n==0 || n == 1)
+            {
+                return 1;
+            }
+
+            // recursive call
+            long recursiveResult = Factorial(n - 1);
+
+
+            // extra work
+            long extraWorkResult = n * recursiveResult;
+
+            return extraWorkResult;
+        }
+
+        int[] MergeSort(int[] array)
+        {
+            int n = array.Length; // problem size
+            int firstHalfProblemSize = n / 2;
+            int secondHalfProblemSize = n - firstHalfProblemSize;
+
+            // stopping condition
+            if (array.Length <= 1)
+            {
+                return array;
+            }
+
+            // splitting my input into two roughly equal halves
+            int[] firstHalfUnsorted = array.Take(firstHalfProblemSize).ToArray();
+            int[] secondHalfUnsorted = array.Skip(firstHalfProblemSize).Take(secondHalfProblemSize).ToArray();
+
+            // recursive callS (x2 calls!)
+            int[] firstHalfSorted = MergeSort(firstHalfUnsorted);
+            int[] secondHalfSorted = MergeSort(secondHalfUnsorted);
+
+            // extra work
+            int[] result = Merge(firstHalfSorted, secondHalfSorted);
+
+            return result;
+        }
+
+        private int[] Merge(int[] firstHalfSorted, int[] secondHalfSorted)
+        {
+            // time equal to the firstHalfSorted.Length + secondHalfSorted.Length
+            // n time
+            throw new NotImplementedException();
+        }
     }
 }
