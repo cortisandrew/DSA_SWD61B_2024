@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgorithmExamples", "Algori
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsymptoticAnalysisExamples", "AsymptoticAnalysisExamples\AsymptoticAnalysisExamples.csproj", "{F6C5CD4B-CE03-484B-B058-8583741D963F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreesProject", "TreesProject\TreesProject.csproj", "{748C849B-0204-45BA-86E1-88B488FF3768}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeProject2", "TreeProject2\TreeProject2.csproj", "{76C707B3-10A5-4429-B1D1-FC022232BA6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{F6C5CD4B-CE03-484B-B058-8583741D963F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6C5CD4B-CE03-484B-B058-8583741D963F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6C5CD4B-CE03-484B-B058-8583741D963F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{748C849B-0204-45BA-86E1-88B488FF3768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{748C849B-0204-45BA-86E1-88B488FF3768}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{748C849B-0204-45BA-86E1-88B488FF3768}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{748C849B-0204-45BA-86E1-88B488FF3768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76C707B3-10A5-4429-B1D1-FC022232BA6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76C707B3-10A5-4429-B1D1-FC022232BA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76C707B3-10A5-4429-B1D1-FC022232BA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76C707B3-10A5-4429-B1D1-FC022232BA6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
