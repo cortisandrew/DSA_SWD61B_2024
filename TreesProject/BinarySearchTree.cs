@@ -23,8 +23,15 @@ namespace TreesProject
         }
 
         public T Search(int key) { 
-            //Root.Search(key)
-            throw new NotImplementedException();}
+
+            if (Root == null)
+            {
+                // The tree is empty!
+                throw new KeyNotFoundException();
+            }
+
+            return Root.Search(key);
+        }
 
         public bool Contains(int key) {
             if (Root == null)

@@ -226,6 +226,7 @@ for (int i = 0; i < elementsToEnqueue; i++)
 
 Console.WriteLine($"The time to dequeue {elementsToEnqueue} elements using an array based vector is {sw.ElapsedTicks} ticks");
 
+/*
 static void TimeStack()
 {
     StackUsingABV<string> undoStack = new StackUsingABV<string>();
@@ -311,3 +312,4 @@ static void TimeStack()
         }
     }
 }
+*/

@@ -102,5 +102,49 @@ namespace TreesProject
                 return result;
             }
         }
-    }
+
+        internal T Search(int key)
+        {
+            // stopping condition
+            if (Key == key)
+            {
+                // The instance's Key is equal to the parameter key
+                // We have found what we where looking for!
+                return Element;
+            }
+
+            // We haven't found the key yet! Keep searching
+            // Where is the key (if it exists?)
+            if (key <= Key)
+            {
+                // the key we are searching for is SMALLER (or equal to) the Key of this instance
+                // if the key exists, it would be in the LEFT sub-tree
+
+                if (Left == null)
+                {
+                    // stopping condition
+                    // there is no LEFT sub-tree
+                    // this means that the key is NOT in the tree
+                    throw new KeyNotFoundException();
+                }
+                else
+                {
+                    return Left.Search(key);
+                }
+            } else // key > Key
+            {
+                // the key we are searching for is LARGER the Key of this instance
+                // if the key exists, it would be in the RIGHT sub-tree
+
+                if (Right == null)
+                {
+                    throw new KeyNotFoundException();
+                }
+                else
+                {
+                    return Right.Search(key);
+                }
+            }
+
+        }
 }

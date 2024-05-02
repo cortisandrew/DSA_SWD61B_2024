@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VectorImplementations", "Ve
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmpiricalAnalysis", "EmpiricalAnalysis\EmpiricalAnalysis.csproj", "{3C184CC6-4B0D-4439-A9B5-81F71E57204C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmExamples", "AlgorithmExamples\AlgorithmExamples.csproj", "{7EB8994E-682E-4029-A319-99DB537AEE02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgorithmExamples", "AlgorithmExamples\AlgorithmExamples.csproj", "{7EB8994E-682E-4029-A319-99DB537AEE02}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsymptoticAnalysisExamples", "AsymptoticAnalysisExamples\AsymptoticAnalysisExamples.csproj", "{F6C5CD4B-CE03-484B-B058-8583741D963F}"
 EndProject
