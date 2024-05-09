@@ -23,6 +23,7 @@ namespace SortingApp
                 // we are ready
                 return;
             }
+
             // select a pivot
             // e.g leftmost pivot
             int pivotIndex = minIndex;
