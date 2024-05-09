@@ -164,5 +164,10 @@ namespace TreeProject2
 
             return sb.ToString();
         }
+
+        public int Count()
+        {
+            return data.Count;
+        }
     }
 }

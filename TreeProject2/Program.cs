@@ -18,3 +18,23 @@ heap.Add(42, 42);
 Console.WriteLine(heap.RemoveMax());
 
 Console.WriteLine(heap);
+
+
+PriorityQueue<string> queue = new PriorityQueue<string>();
+
+queue.Enqueue(100, "High");
+queue.Enqueue(10, "Low");
+queue.Enqueue(20, "Medium");
+
+queue.DequeueHighestPriority();
+
+queue.Enqueue(50, "High");
+
+while (queue.Count() > 0)
+{
+    Console.WriteLine(queue.DequeueHighestPriority().ToString());
+}
+
+List<int> unsorted = new List<int>() { 14, 2, 45, 90, 43, 23 };
+
+Console.WriteLine(String.Join(",", new HeapSort().SortDescending(unsorted)));
