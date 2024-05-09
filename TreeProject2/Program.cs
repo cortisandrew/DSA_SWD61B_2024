@@ -17,4 +17,4 @@ heap.Add(42, 42);
 
 Console.WriteLine(heap.RemoveMax());
 
-Console.WriteLine("End");
+Console.WriteLine(heap);

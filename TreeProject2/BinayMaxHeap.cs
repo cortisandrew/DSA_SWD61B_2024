@@ -134,5 +134,35 @@ namespace TreeProject2
             }
             */
         }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            // notation is DOT notation
+            // we can create a graph using GraphViz tool online
+
+            if (data.Count > 0)
+            {
+                sb.AppendLine("Graph G {");
+                sb.AppendLine(data[0].Key.ToString());
+
+                for (int i = 1; i < data.Count; i++)
+                {
+                    int parentIndex = ParentIndex(i);
+
+                    sb.AppendLine($"{data[parentIndex].Key.ToString()}--{data[i].Key.ToString()}");
+                }
+
+
+                sb.AppendLine("}");
+            }
+            else
+            {
+                return "EMPTY";
+            }
+
+            return sb.ToString();
+        }
     }
 }
