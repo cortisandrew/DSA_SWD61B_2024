@@ -37,4 +37,5 @@ while (queue.Count() > 0)
 
 List<int> unsorted = new List<int>() { 14, 2, 45, 90, 43, 23 };
 
-Console.WriteLine(String.Join(",", new HeapSort().SortDescending(unsorted)));
+Console.WriteLine(
+    String.Join(",", new HeapSort().SortDescending(unsorted)));

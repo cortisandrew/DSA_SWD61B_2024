@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgorithmExamples", "Algori
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsymptoticAnalysisExamples", "AsymptoticAnalysisExamples\AsymptoticAnalysisExamples.csproj", "{F6C5CD4B-CE03-484B-B058-8583741D963F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeProject2", "TreeProject2\TreeProject2.csproj", "{76C707B3-10A5-4429-B1D1-FC022232BA6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeProject2", "TreeProject2\TreeProject2.csproj", "{76C707B3-10A5-4429-B1D1-FC022232BA6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingApp", "SortingApp\SortingApp.csproj", "{D1768EFE-EDE2-4C19-995F-81AF6EBF23C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{76C707B3-10A5-4429-B1D1-FC022232BA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76C707B3-10A5-4429-B1D1-FC022232BA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76C707B3-10A5-4429-B1D1-FC022232BA6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1768EFE-EDE2-4C19-995F-81AF6EBF23C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1768EFE-EDE2-4C19-995F-81AF6EBF23C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1768EFE-EDE2-4C19-995F-81AF6EBF23C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1768EFE-EDE2-4C19-995F-81AF6EBF23C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

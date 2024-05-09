@@ -37,9 +37,60 @@ namespace AlgorithmExamples
             return array_sorted;
         }
 
+        /// <summary>
+        /// Takes two SORTED arrays, and merges them into one larger SORTED array
+        /// </summary>
+        /// <param name="arr1_sorted"></param>
+        /// <param name="arr2_sorted"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         private int[] Merge(int[] arr1_sorted, int[] arr2_sorted)
         {
-            throw new NotImplementedException();
+            int n = arr1_sorted.Length + arr2_sorted.Length;
+
+            int[] output = new int[n];
+
+            int i = 0; // the index of the smallest item from arr1 that has not been copied
+            int j = 0; // the index of the smallest item from arr2 that has not been copied
+            int k = 0; // the next available index to copy to in the output array
+
+            while (i < arr1_sorted.Length && j < arr2_sorted.Length)
+            {
+                // we still have elements in BOTH arrays
+                if (arr1_sorted[i] <= arr2_sorted[j])
+                {
+                    output[k] = arr1_sorted[i];
+                    i++;
+                }
+                else
+                {
+                    output[k] = arr2_sorted[j];
+                    j++;
+                }
+
+                k++;
+            }
+
+            // one of the arrays has been copied completely
+            // copy all of the remaining elements
+
+            while (i < arr1_sorted.Length)
+            {
+                // there are still elements from array 1 to be copied
+                output[k] = arr1_sorted[i];
+                i++;
+                k++;
+            }
+
+            while (j < arr2_sorted.Length)
+            {
+                // there are still elements from array 2 to be copied
+                output[k] = arr2_sorted[j];
+                j++;
+                k++;
+            }
+
+            return output;
         }
     }
 }
