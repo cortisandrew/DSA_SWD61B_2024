@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -91,6 +92,50 @@ namespace AlgorithmExamples
             }
 
             return output;
+        }
+
+        public void QuickSort(int[] arr)
+        {
+            // Quicksort the entire array (i.e. from index 0 to index arr.Length - 1
+            QuickSort(arr, 0, arr.Length - 1);
+        }
+
+        /// <summary>
+        /// Quicksort the sub-array between lo and hi
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="lo"></param>
+        /// <param name="hi"></param>
+        private void QuickSort(int[] arr, int lo, int hi)
+        {
+            // stopping condition
+            if (lo >= hi)
+            {
+                // the range to sort is 1 or less
+                return;
+            }
+
+            // select a pivot
+            int pivotIndex = SelectPivot(lo, hi, arr);
+            int newPivotIndex = Partition(arr, pivotIndex);
+
+            // The pivot has now been placed at newPivotIndex. It is now in place
+            QuickSort(arr, lo, newPivotIndex - 1); // quicksort the left part, i.e. everything between lo and newPivotIndex - 1
+            QuickSort(arr, newPivotIndex + 1, hi); // quicksort the right part, i.e. everything between lo and newPivotIndex - 1
+        }
+
+        private int Partition(int[] arr, int pivotIndex)
+        {
+            // WARNING!
+            // 1. you will be using a reference
+            // 2. some references tend to be problematic (i.e. in the past Wikipedia code had issues that are hard to debug)
+            // 3. Some references use different setups. For example, arrays that start from 1. Some references use different inputs.
+            throw new NotImplementedException();
+        }
+
+        private int SelectPivot(int lo, int hi, int[] arr)
+        {
+            return lo;
         }
     }
 }
