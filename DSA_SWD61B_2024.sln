@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsymptoticAnalysisExamples"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeProject2", "TreeProject2\TreeProject2.csproj", "{76C707B3-10A5-4429-B1D1-FC022232BA6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingApp", "SortingApp\SortingApp.csproj", "{D1768EFE-EDE2-4C19-995F-81AF6EBF23C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortingApp", "SortingApp\SortingApp.csproj", "{D1768EFE-EDE2-4C19-995F-81AF6EBF23C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRNG", "PRNG\PRNG.csproj", "{E3BF79C2-F439-4961-B9F6-34CC2C6DEBBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{D1768EFE-EDE2-4C19-995F-81AF6EBF23C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1768EFE-EDE2-4C19-995F-81AF6EBF23C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1768EFE-EDE2-4C19-995F-81AF6EBF23C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3BF79C2-F439-4961-B9F6-34CC2C6DEBBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3BF79C2-F439-4961-B9F6-34CC2C6DEBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3BF79C2-F439-4961-B9F6-34CC2C6DEBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3BF79C2-F439-4961-B9F6-34CC2C6DEBBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
