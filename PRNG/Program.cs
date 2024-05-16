@@ -39,6 +39,5 @@ Console.WriteLine(
 
 
 // -5 Mod 6 = 1
+// Integer remainder gives and incorrect result if used as a modulus operator!
 Console.WriteLine(-5 % 6);
-
-Console.WriteLine(Math.Abs(-5) % 6);
